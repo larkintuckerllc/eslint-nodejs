@@ -9,7 +9,7 @@
     "serve": "npm run build-ts && node dist/server.js",
     "watch-node": "nodemon dist/server.js",
     "watch-ts": "tsc -w",
-    "lint": "echo \"Success: no lint configuration\" && exit 0",
+    "lint": "eslint src/**.ts",
     "test": "echo \"Success: no test specified\" && exit 0",
     "watch": "npm run build-ts && concurrently 'npm:watch-ts' 'npm:watch-node'"
   },
@@ -21,7 +21,7 @@
   },
   "lint-staged": {
     "*.ts": [
-      "echo \"Success: no lint configuration\" && exit 0"
+      "eslint"
     ]
   },
   "keywords": [],
